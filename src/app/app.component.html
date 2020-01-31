@@ -1,0 +1,40 @@
+<div class="jumbotron text-center">
+	<h1 class="display-5">
+		First Hello World Angular program
+	</h1>
+</div>
+
+<div class="container">
+	<div class="row custom-wrapper">
+		<div class="col-md-12">
+
+			<!-- Form starts -->
+			<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+				<!-- Gender -->
+				<div class="group-gap">
+					<h5 class="mb-3">Gender</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="male" type="radio" class="custom-control-input" value="male" name="gender" formControlName="gender">
+              <label class="custom-control-label" for="male">Male</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="female" type="radio" class="custom-control-input" value="female" name="gender" formControlName="gender">
+              <label class="custom-control-label" for="female">Female</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && myForm.errors?.required">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+      </form><!-- Form ends -->
+
+    </div>
+  </div>
+</div>
